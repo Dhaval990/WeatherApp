@@ -1,0 +1,105 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id "dagger.hilt.android.plugin"
+}
+apply from: "$rootDir/dependencies.gradle"
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "com.app.weatherapp"
+        minSdkVersion configuration.minSdkVersion
+        targetSdkVersion configuration.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+
+
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+
+
+    implementation libraries.androidSupport.appCompat
+    implementation libraries.androidSupport.constraintlayout
+
+    implementation libraries.kotlin.stdlib
+    implementation 'androidx.core:core-ktx:1.3.2'
+
+    implementation libraries.jetpack.viewmodel
+    implementation libraries.jetpack.livedata
+    implementation libraries.jetpack.runtime
+    implementation libraries.jetpack.compiler
+
+    implementation libraries.network.gson
+    implementation libraries.network.okHttp
+    implementation libraries.network.retrofit
+    implementation libraries.network.loggingInterceptor
+    implementation libraries.network.gsonConverter
+
+    implementation libraries.glide.glide
+    implementation "androidx.lifecycle:lifecycle-service:2.2.0"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    kapt libraries.glide.compiler
+
+    implementation libraries.coroutine.core
+    implementation libraries.coroutine.room
+
+    implementation libraries.hilt.android
+    kapt libraries.hilt.compiler
+
+    implementation libraries.material
+
+
+    implementation libraries.room.runtime
+    kapt libraries.room.compiler
+
+
+    kapt "androidx.hilt:hilt-compiler:${versions.hiltKapt}"
+    implementation libraries.hilt.hiltViewModel
+    implementation libraries.androidSupport.fragment
+
+
+
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
+
+
+  /*  implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
+
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+
+    testImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'*/
+}
