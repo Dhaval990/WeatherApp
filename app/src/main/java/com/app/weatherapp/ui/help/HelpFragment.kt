@@ -1,4 +1,4 @@
-package com.app.weatherapp.ui.notifications
+package com.app.weatherapp.ui.help
 
 import android.os.Bundle
 import android.view.LayoutInflater

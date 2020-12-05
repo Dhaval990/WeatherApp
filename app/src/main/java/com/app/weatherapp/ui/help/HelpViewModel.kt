@@ -1,9 +1,8 @@
-package com.app.weatherapp.ui.notifications
+package com.app.weatherapp.ui.help
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import dagger.hilt.android.AndroidEntryPoint
 
 
 class HelpViewModel : ViewModel() {
