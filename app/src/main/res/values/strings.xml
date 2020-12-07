@@ -5,4 +5,20 @@
     <string name="title_dashboard">City screen</string>
     <string name="title_notifications">Help screen</string>
     <string name="add_city">Add City</string>
+
+
+
+    <string name="internet_not_connected">Internet not available</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="searching_location">Searching  address</string>
+    <string name="not_getting_address">Could not get address…</string>
+    <string name="bookmarked">BookMarked</string>
+    <string name="today_forecast">Today’s forecast</string>
+    <string name="temperature">Temperature</string>
+
+    <string name="rain_chances">Rain chances</string>
+    <string name="wind">Wind</string>
+    <string name="humidity">Humidity</string>
+
+    <string name="generic_name">%1$s KMH</string>
 </resources>

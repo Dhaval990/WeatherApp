@@ -11,10 +11,14 @@ class MapViewModel @ViewModelInject constructor(
 ) : ViewModel() {
 
 
-    suspend fun addBookmarkPlace(bookmarkPlace: BookmarkPlace) {
+    suspend fun addBookmarkPlace(bookmarkPlace: BookmarkPlace, result: (Long) -> Unit) {
         withContext(Dispatchers.IO)
         {
-            mapRepo.addBookmarkPlace(bookmarkPlace)
+            mapRepo.addBookmarkPlace(bookmarkPlace).let {
+                withContext(Dispatchers.Main) {
+                    result(it)
+                }
+            }
         }
     }
 }

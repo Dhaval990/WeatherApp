@@ -3,6 +3,8 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id "dagger.hilt.android.plugin"
+    id "androidx.navigation.safeargs"
+
 }
 apply from: "$rootDir/dependencies.gradle"
 
@@ -34,14 +36,12 @@ android {
     }
 
 
-
     buildFeatures {
         dataBinding true
     }
 }
 
 dependencies {
-
 
     implementation libraries.androidSupport.appCompat
     implementation libraries.androidSupport.constraintlayout

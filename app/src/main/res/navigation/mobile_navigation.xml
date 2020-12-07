@@ -13,13 +13,25 @@
         <action
             android:id="@+id/action_navigation_home_to_mapsFragment3"
             app:destination="@id/mapsFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_weather"
+            app:destination="@id/navigation_weather" />
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.app.weatherapp.ui.dashboard.CityFragment"
+        android:id="@+id/navigation_weather"
+        android:name="com.app.weatherapp.ui.city.WeatherFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_city" />
+        tools:layout="@layout/fragment_weather">
+        <action
+            android:id="@+id/action_navigation_weather_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <argument
+            android:name="id"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"

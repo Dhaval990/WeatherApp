@@ -1,4 +1,4 @@
-package com.app.weatherapp.ui.di
+package com.app.weatherapp.di
 
 import android.app.Application
 import androidx.room.Room
@@ -8,22 +8,21 @@ import com.app.weatherapp.db.dao.BookmarkPlaceDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 class DbModule {
 
     @Module
-    @InstallIn(ApplicationComponent::class)
+    @InstallIn(SingletonComponent::class)
     class DataBaseModule {
-
         @Provides
         fun providesWeatherDatabase(application: Application): WeatherDataBase {
             return Room.databaseBuilder(
                 application.applicationContext,
                 WeatherDataBase::class.java,
                 "weather_db"
-            ).setJournalMode(RoomDatabase.JournalMode.AUTOMATIC).enableMultiInstanceInvalidation()
+            ).setJournalMode(RoomDatabase.JournalMode.AUTOMATIC).fallbackToDestructiveMigration()
                 .build()
         }
 

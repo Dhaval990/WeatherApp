@@ -8,5 +8,6 @@ data class BookmarkPlace(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val lat: Double,
-    val log: Double
+    val log: Double,
+    val cityName: String
 )

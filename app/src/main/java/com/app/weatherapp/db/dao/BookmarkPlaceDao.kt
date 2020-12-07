@@ -7,5 +7,5 @@ import com.app.weatherapp.db.entites.BookmarkPlace
 @Dao
 interface BookmarkPlaceDao {
     @Insert
-    suspend fun addPlace(bookmarkPlace: BookmarkPlace)
+    suspend fun addPlace(bookmarkPlace: BookmarkPlace): Long
 }
