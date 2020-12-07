@@ -26,7 +26,7 @@ class CityViewModel @ViewModelInject constructor(
     suspend fun getForCase(
         lat: String,
         lon: String,
-        units: String,
+        units: String = appPreferences.getUnit(),
         appID: String = appPreferences.getAppToken(),
     ) {
         withContext(Dispatchers.IO) {
@@ -34,6 +34,7 @@ class CityViewModel @ViewModelInject constructor(
             with(cityRepo.getFiveDayForecast(lat, lon, units, appID)) {
                 if (isSuccess) {
                     getOrNull()?.let {
+                        it.unit = units
                         _weatherData.postValue(it)
                     }
                 }

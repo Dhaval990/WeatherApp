@@ -7,7 +7,6 @@
     <string name="add_city">Add City</string>
 
 
-
     <string name="internet_not_connected">Internet not available</string>
     <string name="title_activity_maps">Map</string>
     <string name="searching_location">Searching  address</string>
@@ -21,4 +20,23 @@
     <string name="humidity">Humidity</string>
 
     <string name="generic_name">%1$s KMH</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="unit">unit system</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="setting">Setting</string>
+
+    <string name="temperature_value">%1$s, %2$s</string>
+    <string name="help">This is the weather forecast application. Download this application and click on the + icon and select the city on the map. after that, on the home screen, you can see the list of the city. Select the bookmarked city and you can see the weather forecast</string>
+
 </resources>

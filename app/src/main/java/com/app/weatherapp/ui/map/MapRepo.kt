@@ -10,4 +10,6 @@ class MapRepo @Inject constructor(
 
     suspend fun addBookmarkPlace(bookmarkPlace: BookmarkPlace) =
         bookmarkPlaceDao.addPlace(bookmarkPlace)
+
+
 }

@@ -6,6 +6,7 @@ plugins {
     id "androidx.navigation.safeargs"
 
 }
+apply plugin: 'kotlin-parcelize'
 apply from: "$rootDir/dependencies.gradle"
 
 android {
@@ -17,7 +18,7 @@ android {
         targetSdkVersion configuration.targetSdkVersion
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -25,6 +26,13 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
         }
     }
     compileOptions {
@@ -63,6 +71,7 @@ dependencies {
     implementation libraries.glide.glide
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'androidx.preference:preference-ktx:1.1.1'
 
     kapt libraries.glide.compiler
 
@@ -86,5 +95,15 @@ dependencies {
 
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
+
+    def paging_version = "2.1.2"
+
+    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+    // alternatively - without Android dependencies for testing
+    testImplementation "androidx.paging:paging-common-ktx:$paging_version"
+
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+
 
 }

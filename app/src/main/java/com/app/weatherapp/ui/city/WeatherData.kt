@@ -4,6 +4,8 @@ import com.google.gson.annotations.SerializedName
 
 data class WeatherData(
 
+	var unit: String? = null,
+
 	@SerializedName("rain")
 	val rain: Rain? = null,
 

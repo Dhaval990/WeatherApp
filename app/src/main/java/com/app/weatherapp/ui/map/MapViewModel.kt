@@ -21,4 +21,6 @@ class MapViewModel @ViewModelInject constructor(
             }
         }
     }
+
+
 }

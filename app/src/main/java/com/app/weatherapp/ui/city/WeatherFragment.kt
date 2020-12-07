@@ -18,7 +18,7 @@ import kotlinx.coroutines.launch
 class WeatherFragment : Fragment() {
     private val cityViewModel: CityViewModel by viewModels()
 
-    val args : WeatherFragmentArgs by navArgs()
+    private val args: WeatherFragmentArgs by navArgs()
 
     private lateinit var mBinding: FragmentWeatherBinding
     override fun onCreateView(
@@ -29,20 +29,19 @@ class WeatherFragment : Fragment() {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_weather, container, false)
         mBinding.cityViewModel = cityViewModel
 
-        loadWeatherData()
-
-        args.id
+        with(args.bookmarkPlace) {
+            loadWeatherData(lat, log)
+        }
 
         mBinding.lifecycleOwner = this
+
         return mBinding.root
 
     }
 
-    private fun loadWeatherData() {
+    private fun loadWeatherData(lat: Double, log: Double) {
         lifecycleScope.launch {
-            //cityViewModel.getForCase()
+            cityViewModel.getForCase(lat.toString(), log.toString())
         }
     }
-
-
 }

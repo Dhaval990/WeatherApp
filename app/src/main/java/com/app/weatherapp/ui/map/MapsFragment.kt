@@ -91,7 +91,7 @@ class MapsFragment : androidx.fragment.app.Fragment() {
             Geocoder(context, Locale.ENGLISH).getFromLocation(latLng.latitude, latLng.longitude, 1)
         return if (addresses.isNotEmpty()) {
             val fetchedAddress: Address = addresses[0]
-            fetchedAddress.getAddressLine(0)
+            fetchedAddress.locality
 
         } else {
             null

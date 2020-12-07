@@ -12,6 +12,5 @@ import com.app.weatherapp.db.entites.BookmarkPlace
     ], exportSchema = false, version = 1
 )
 abstract class WeatherDataBase : RoomDatabase() {
-
     abstract fun bookmarkPlaceDao(): BookmarkPlaceDao
 }

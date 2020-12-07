@@ -23,6 +23,7 @@ class NetworkModule {
             .callTimeout(2, TimeUnit.MINUTES)
             .connectTimeout(2, TimeUnit.MINUTES)
             .readTimeout(10, TimeUnit.MINUTES)
+            .retryOnConnectionFailure(true)
             .addInterceptor(loggingInterceptor)
             .build()
     }

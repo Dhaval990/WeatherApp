@@ -7,29 +7,32 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.app.weatherapp.ui.home.HomeFragment"
+        android:name="com.app.weatherapp.ui.home.BookmarkPlaceListFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home">
+        tools:layout="@layout/fragment_bookmark_place">
         <action
             android:id="@+id/action_navigation_home_to_mapsFragment3"
             app:destination="@id/mapsFragment" />
         <action
             android:id="@+id/action_navigation_home_to_navigation_weather"
             app:destination="@id/navigation_weather" />
+        <action
+            android:id="@+id/action_navigation_home_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_weather"
         android:name="com.app.weatherapp.ui.city.WeatherFragment"
-        android:label="@string/title_dashboard"
+        android:label="Weather forecast"
         tools:layout="@layout/fragment_weather">
         <action
             android:id="@+id/action_navigation_weather_to_navigation_home"
             app:destination="@id/navigation_home" />
         <argument
-            android:name="id"
-            android:defaultValue="0"
-            app:argType="integer" />
+            android:name="bookmarkPlace"
+            app:argType="com.app.weatherapp.db.entites.BookmarkPlace" />
+
 
     </fragment>
 
@@ -46,6 +49,14 @@
 
         <action
             android:id="@+id/action_mapsFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.app.weatherapp.ui.setting.SettingsFragment"
+        android:label="Settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_navigation_home"
             app:destination="@id/navigation_home" />
     </fragment>
 </navigation>

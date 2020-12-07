@@ -1,9 +1,6 @@
 package com.app.weatherapp.utils
 
 import android.util.Log
-import android.view.View
-import android.widget.EditText
-import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
@@ -29,21 +26,6 @@ object Extensions {
         }
     }
 
-    fun EditText.errorWithFocus(error: String) {
-        setError(error)
-        requestFocus()
-    }
-
-    val <T> T.exhaustive: T
-        get() = this
-
-    fun showShort(view: View, message: String) {
-        Snackbar.make(view, message, Snackbar.LENGTH_SHORT).show()
-    }
-
-    fun showLong(view: View, message: String) {
-        Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
-    }
 
     suspend fun <T : Any> handleRequestNew(requestFunc: suspend () -> T): Try<T> {
         return try {
